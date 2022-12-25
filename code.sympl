@@ -1,0 +1,60 @@
+_UV
+{g
+# 1601 pop
+# 1080 it
+# 1920 width
+# 1080 height
+# rule_110 title
+: @width @pop #wr
+: @height @it #hr
+WC @width @height @title
+# 0 000
+# 1 001
+# 0 010
+# 1 011 
+# 1 100
+# 0 101
+# 0 110
+# 1 111
+- @pop 2 #whC
+# 0 i
+# 0 j
+{fwz
+[ 0
++ @i 1 #i
+! < @i 800 fwz
+# 0 i
+[ 1
+{fwz1
+[ 0
++ @i 1 #i
+! < @i 800 fwz1
+{its
+] 0
+# 0 i
+{inr
+! = @i 0 fst
+}cn
+{fst
+# \ f
+# \ m
+{cn
+# \ l
+concat @f @m #f
+concat @f @l #f
+# @@f cnt
+] @@f
+# @m f
+# @l m
+* @i @wr #x
+* @j @hr #y
+* @cnt 255 #cnt
+#WRECTC @x @y @wr @hr @cnt
++ @i 1 #i
+! < @i @whC inr
+] 0
+{rl
+/\
++ @j 1 #j
+! < @j @it its
+WNL
